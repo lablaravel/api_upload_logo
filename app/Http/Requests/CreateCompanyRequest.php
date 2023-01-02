@@ -24,7 +24,9 @@ class CreateCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            //
-        ];
+                'name' => 'required|max:100',
+                'asn' => 'required|max:100',
+                'url_logo' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            ];
     }
 }
