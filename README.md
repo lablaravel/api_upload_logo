@@ -11,3 +11,31 @@
 Estou aprendendo a criar um upload de imagem via API.
 Material de Referncia  - <a href="https://larainfo.com/blogs/laravel-9-rest-api-image-upload-with-validation-example">Clique aqui </a>
 
+## Observações
+
+<p> Faça o clone desse repositório.</p>
+
+<p> Depois, use o comando, mas não esquece que tem que ter instalado na sua máquina o PHP 8 e depois instale o composer</p>
+```sh
+composer install
+```
+<p> Apos isso, instale um servidor Mysql, caso não tenha, pode usar o Xampp, se souber usar Docker melhor ainda </p>
+
+<p> Não esqueça de configurar o seu arquivo .env </p>
+
+<p> Uma vez instalado com servidor mysql, executar o comando </p>
+```php
+php artisan migrate
+```
+
+<p> Vai no postman, não esqueça de adiciona, no headers, Accept -> application/json </p>
+<p> No body, escolhe form-data </p>
+<p> Adicione os campos da coluna do seu banco de dados, que é, nome, asn, url_logo.</p>
+<p> Não esqueça, de alterar o tipo no postman para file </p>
+
+
+<h1> O que aprendi com esse projeto </h1>
+
+<p>Qual diferença de usar validação de request dentro do controller e fora do controller ?</p>
+
+<p> Na própria documentação do laravel informa, que quando eu faço verificação fora do controller, meio que não sobrecarrego o controller de responsabilidade  e deixo outra class se responsabilizar por isso, uma vez verificado, ela me retorna um resultado, se for um sucesso, eu continuo o processo e retorno a resposta da minha função do meu controller, entretanto, caso eu tenha algum problema em alguma parte da requisição enviada via post, a class responsável ele retorna um erro com asmensagens personalizadas se assim eu quiser, e assim não aciona o resto do processo da minha função do meu controller até aquilo se resolver.</p>
